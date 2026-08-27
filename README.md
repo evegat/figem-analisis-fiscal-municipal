@@ -1,5 +1,11 @@
 ﻿# Validación Empírica del FIGEM en Municipios Chilenos
 
+[![Licencia](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Investigación Reproducible](https://img.shields.io/badge/Open%20Science-Reproducible-green.svg)](#)
+
+[ 🇪🇸 Español ](README.md) · [ 🇬🇧 English version ](README.en.md)
+
 Repositorio de **código abierto e investigación reproducible** correspondiente al estudio econométrico y multivariado sobre el **Fondo de Incentivo a la Gestión Municipal (FIGEM)** en Chile.
 
 > 📄 **Referencia bibliográfica:**  
@@ -32,6 +38,8 @@ El FIGEM es uno de los principales instrumentos de transferencia condicionada de
 │   ├── fig_boxplots_autonomia.png        # Autonomía fiscal por tipología
 │   ├── fig_coeficientes_fe.png           # Coeficientes de modelos de efectos fijos
 │   └── fig_confusion_heatmap.png         # Matriz de concordancia entre metodologías
+├── requirements.txt                      # Dependencias de Python reproducibles
+├── LICENSE                               # Licencia MIT
 └── README.md
 ```
 
@@ -57,7 +65,7 @@ python -m venv .venv
 source .venv/bin/activate  # En Windows: .venv\Scripts\activate
 
 # 3. Instalar requerimientos
-pip install pandas numpy scikit-learn matplotlib seaborn scipy statsmodels
+pip install -r requirements.txt
 
 # 4. Ejecutar análisis y reproducir figuras
 python src/tesis_clustering_final.py
@@ -66,7 +74,23 @@ python src/generador_graficos_USACH.py
 
 ---
 
-## 📊 Autores
+## 📚 Cita Bibliográfica (BibTeX)
+
+```bibtex
+@article{montecinos_vega_2025_figem,
+  author    = {Montecinos Garc{\'i}a, Randy Soledad and Vega Toledo, Eduardo Isaack},
+  title     = {Validaci{\'o}n emp{\'i}rica del FIGEM en municipios chilenos: tipolog{\'i}as fiscales, clustering y evaluaci{\'o}n de desempe{\~n}o},
+  journal   = {Revista Pol{\'i}ticas P{\'u}blicas},
+  year      = {2025},
+  volume    = {18},
+  number    = {2},
+  pages     = {3--21}
+}
+```
+
+---
+
+## 👥 Autores
 
 * **Soledad Montecinos García** — Universidad de Santiago de Chile (USACH).
-* **Eduardo Vega Toledo** — *Administrador Público · Magíster en Gobierno y Gerencia Pública (U. de Chile)* · Ex Jefe de Departamento de Inversión Municipal (SUBDERE).
+* **Eduardo Vega Toledo** — *Administrador Público · Magíster en Gobierno y Gerencia Pública (U. de Chile)* · Ex Jefe de Departamento de Inversión Municipal (SUBDERE) · Docente en FAGOB Universidad de Chile.
