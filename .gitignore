@@ -5,3 +5,7 @@ env/
 .DS_Store
 Thumbs.db
 .vscode/
+
+# MyWorld Harness runtime evidence
+.myworld-harness/evidence/
+.myworld-harness/cache/
