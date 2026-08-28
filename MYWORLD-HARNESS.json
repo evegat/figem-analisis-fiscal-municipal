@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "product_id": "PUB008",
+  "name": "Validación empírica del FIGEM en municipios chilenos",
+  "owner": "Eduardo Vega",
+  "myworld_project": "PUB008",
+  "kind": "research_code",
+  "lifecycle_stage": "maintenance",
+  "risk": "moderate",
+  "data_classification": ["public"],
+  "deployment": {"state": "unknown", "production_urls": []},
+  "repository": {"type": "git", "default_branch": "main", "remote_policy": "existing"},
+  "commands": {"quality": ["python -m compileall -q src"], "build": [], "test": []},
+  "critical_paths": ["src", "data", "figuras", "requirements.txt", "README.md"],
+  "forbidden_paths": [".env", "credentials", "_backups", "data/raw"],
+  "multi_agent": {"isolation": "worktree", "integration_owner": "Eduardo Vega"},
+  "observability": {"level": 1, "domains": ["technical"], "monitors": []},
+  "release": {"backup_required": false, "restore_test_required": false, "rollback_required": true, "rpo_hours": null, "rto_hours": null},
+  "evidence": {"last_audit": null, "pending_register": "MyWorld:harness/state/pending.ndjson"}
+}
