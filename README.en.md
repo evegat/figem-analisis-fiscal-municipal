@@ -1,5 +1,7 @@
 # Empirical validation of FIGEM in Chilean municipalities
 
+[Español](README.md) · [English](README.en.md) · [Português](README.pt-BR.md)
+
 Reproducible repository associated with Montecinos García, R. S., & Vega
 Toledo, E. (2025), *Validación empírica del FIGEM en municipios chilenos:
 tipologías fiscales y evaluación cuantitativa*, Revista Políticas Públicas,

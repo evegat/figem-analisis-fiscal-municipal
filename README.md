@@ -1,5 +1,7 @@
 # Validación empírica del FIGEM en municipios chilenos
 
+[Español](README.md) · [English](README.en.md) · [Português](README.pt-BR.md)
+
 Repositorio reproducible asociado a:
 
 > Montecinos García, R. S., & Vega Toledo, E. (2025). *Validación empírica
