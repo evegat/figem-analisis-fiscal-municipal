@@ -37,9 +37,16 @@ python src/generador_graficos_USACH.py
 The pipeline reads `data/Input_USACH.xlsx` and writes the traceable
 17-sheet result to `data/Output_USACH.xlsx`.
 
+Run `python scripts/verify_reproduction.py` to check the headline figures
+reported by the paper.
+
 ## Scope and limitations
 
 The study is evaluative, not causal. Fixed effects identify within-municipality
 associations. The reported 48.7% discrepancy is the complement of modal
 row-wise agreement in the five-by-four FIGEM/cluster table; it is not a strict
 one-to-one classification accuracy measure.
+
+Code is released under MIT. Data provenance and redistribution conditions are
+documented in `docs/DATA-AND-LICENSE.md` and must be confirmed before public
+release.

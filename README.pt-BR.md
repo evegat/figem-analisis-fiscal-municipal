@@ -49,6 +49,9 @@ python src/generador_graficos_USACH.py
 O pipeline lê `data/Input_USACH.xlsx` e grava o resultado rastreável com 17
 planilhas em `data/Output_USACH.xlsx`.
 
+Execute `python scripts/verify_reproduction.py` para verificar os principais
+resultados publicados no artigo.
+
 Os resultados esperados incluem:
 
 ```text
@@ -74,6 +77,11 @@ originais.
 A proposta de redesenho híbrido apresentada no artigo é uma hipótese de
 política pública. Qualquer implementação exigiria simulação distributiva,
 análise de ganhadores e perdedores e uma transição gradual.
+
+O código é distribuído sob a licença MIT. A procedência dos dados e as
+condições de redistribuição estão documentadas em
+`docs/DATA-AND-LICENSE.md` e devem ser confirmadas antes da publicação do
+repositório.
 
 ## Estrutura
 

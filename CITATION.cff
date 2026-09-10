@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: "Validación empírica del FIGEM en municipios chilenos"
+message: "Si utiliza este repositorio, cite el artículo y el repositorio."
+type: software
+authors:
+  - family-names: "Montecinos García"
+    given-names: "Randy Soledad"
+    orcid: "https://orcid.org/0009-0002-0426-5762"
+  - family-names: "Vega Toledo"
+    given-names: "Eduardo"
+    orcid: "https://orcid.org/0007-9144-7762"
+repository-code: "https://github.com/evegat/figem-analisis-fiscal-municipal"
+license: MIT
+year: 2025
+doi: "10.35588/qezhpj36"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Montecinos García"
+      given-names: "Randy Soledad"
+    - family-names: "Vega Toledo"
+      given-names: "Eduardo"
+  title: "Validación empírica del FIGEM en municipios chilenos: tipologías fiscales y evaluación cuantitativa"
+  journal: "Revista Políticas Públicas"
+  volume: 18
+  issue: 2
+  pages: 3-21
+  year: 2025
+  doi: "10.35588/qezhpj36"

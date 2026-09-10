@@ -41,6 +41,8 @@ data/
 src/
   Clustering_USACH.py    # pipeline completo
   generador_graficos_USACH.py
+scripts/
+  verify_reproduction.py # controles de cifras publicadas
 figuras/                 # seis figuras reproducibles
 docs/
   Cuaderno_Metodologico_FIGEM.docx
@@ -88,6 +90,11 @@ reemplaza observaciones originales.
 La propuesta de rediseño híbrido del artículo es una hipótesis de política
 pública, no una regla implementable sin simulación distributiva, análisis de
 ganadores y perdedores y transición gradual.
+
+La licencia del código es MIT. La procedencia y las condiciones de
+redistribución de los datos están documentadas en
+`docs/DATA-AND-LICENSE.md` y deben confirmarse antes de hacer pública la
+repo.
 
 ## Licencia y cita
 
