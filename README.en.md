@@ -50,3 +50,6 @@ one-to-one classification accuracy measure.
 Code is released under MIT. The source records are public SINIM/FIGEM
 information downloaded manually and consolidated by the authors. Provenance
 and attribution are documented in `docs/DATA-AND-LICENSE.md`.
+
+GitHub Actions automatically compiles the scripts and verifies the headline
+figures reported by the article.

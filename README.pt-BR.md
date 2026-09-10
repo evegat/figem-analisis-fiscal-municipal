@@ -83,6 +83,9 @@ públicas do SINIM/FIGEM, baixadas manualmente e consolidadas pelos autores. A
 procedência e a atribuição estão documentadas em
 `docs/DATA-AND-LICENSE.md`.
 
+O GitHub Actions compila automaticamente os scripts e verifica os principais
+resultados publicados no artigo.
+
 ## Estrutura
 
 ```text

@@ -96,6 +96,9 @@ SINIM/FIGEM descargada manualmente y consolidada por los autores. La
 procedencia y atribución están documentadas en
 `docs/DATA-AND-LICENSE.md`.
 
+GitHub Actions ejecuta automáticamente la compilación de los scripts y una
+verificación de las cifras principales reportadas en el artículo.
+
 ## Licencia y cita
 
 El código se distribuye bajo MIT. Para citar el análisis, use la referencia

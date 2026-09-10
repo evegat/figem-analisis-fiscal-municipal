@@ -6,6 +6,6 @@ env/
 Thumbs.db
 .vscode/
 
-# MyWorld Harness runtime evidence
-.myworld-harness/evidence/
-.myworld-harness/cache/
+# Local runtime artifacts
+evidence/
+cache/
