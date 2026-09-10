@@ -25,6 +25,11 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import numpy as np
 import os
+import sys
+from pathlib import Path
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 # ─── Configuración global uniforme ────────────────────────────────────────
 plt.rcParams.update({
@@ -45,8 +50,9 @@ plt.rcParams.update({
     'axes.spines.right': False,
 })
 
-OUTPUT_FILE = 'Output_USACH.xlsx'
-FIGURAS_DIR = 'figuras'
+PROJECT_DIR = Path(__file__).resolve().parents[1]
+OUTPUT_FILE = PROJECT_DIR / 'data' / 'Output_USACH.xlsx'
+FIGURAS_DIR = PROJECT_DIR / 'figuras'
 
 # Paleta consistente para los 4 clústeres
 CLUSTER_COLORS = {
@@ -66,7 +72,7 @@ CLUSTER_ORDER = [
 
 def generar_graficos():
     os.makedirs(FIGURAS_DIR, exist_ok=True)
-    print("[*] Leyendo datos desde Output_USACH.xlsx...")
+    print(f"[*] Leyendo datos desde {Path(OUTPUT_FILE).name}...")
 
     df_eval = pd.read_excel(OUTPUT_FILE, sheet_name='03_Evaluacion_k')
     df_mun  = pd.read_excel(OUTPUT_FILE, sheet_name='05_Base_municipal_final')
@@ -107,7 +113,7 @@ def generar_graficos():
 
     plt.title('Evaluación del número óptimo de clústeres (k=2..6)')
     plt.tight_layout()
-    plt.savefig(f'{FIGURAS_DIR}/fig_elbow_silhouette.png')
+    plt.savefig(Path(FIGURAS_DIR) / 'fig_elbow_silhouette.png')
     plt.close()
     print("  [✓] fig_elbow_silhouette.png")
 
@@ -135,7 +141,7 @@ def generar_graficos():
 
     ax.set_xlim(0, max(pcts.values) + 8)
     plt.tight_layout()
-    plt.savefig(f'{FIGURAS_DIR}/fig_clusters_distribucion.png')
+    plt.savefig(Path(FIGURAS_DIR) / 'fig_clusters_distribucion.png')
     plt.close()
     print("  [✓] fig_clusters_distribucion.png")
 
@@ -155,7 +161,7 @@ def generar_graficos():
     ax.set_title('Biplot: Desarrollo (PCA1) vs Autonomía Fiscal por Clúster')
     ax.legend(title='Tipología', loc='upper left', framealpha=0.9)
     plt.tight_layout()
-    plt.savefig(f'{FIGURAS_DIR}/fig_pca_biplot.png')
+    plt.savefig(Path(FIGURAS_DIR) / 'fig_pca_biplot.png')
     plt.close()
     print("  [✓] fig_pca_biplot.png")
 
@@ -197,7 +203,7 @@ def generar_graficos():
 
     fig.colorbar(im, ax=ax, label='Frecuencia', shrink=0.8)
     plt.tight_layout()
-    plt.savefig(f'{FIGURAS_DIR}/fig_confusion_heatmap.png')
+    plt.savefig(Path(FIGURAS_DIR) / 'fig_confusion_heatmap.png')
     plt.close()
     print("  [✓] fig_confusion_heatmap.png")
 
@@ -224,7 +230,7 @@ def generar_graficos():
     ax.set_ylabel('Autonomía Fiscal (Promedio)')
     ax.set_title('Distribución de Autonomía Fiscal por grupo FIGEM')
     plt.tight_layout()
-    plt.savefig(f'{FIGURAS_DIR}/fig_boxplots_autonomia.png')
+    plt.savefig(Path(FIGURAS_DIR) / 'fig_boxplots_autonomia.png')
     plt.close()
     print("  [✓] fig_boxplots_autonomia.png")
 
@@ -274,7 +280,7 @@ def generar_graficos():
     ax.set_xlabel('Coeficiente (valor ± IC 95%)')
     ax.set_title('Coeficientes del Modelo de Panel FE con IC 95%')
     plt.tight_layout()
-    plt.savefig(f'{FIGURAS_DIR}/fig_coeficientes_fe.png')
+    plt.savefig(Path(FIGURAS_DIR) / 'fig_coeficientes_fe.png')
     plt.close()
     print("  [✓] fig_coeficientes_fe.png")
 

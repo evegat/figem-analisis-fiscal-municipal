@@ -1,96 +1,93 @@
-﻿# Validación Empírica del FIGEM en Municipios Chilenos
+# Validación empírica del FIGEM en municipios chilenos
 
-[![Licencia](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![Investigación Reproducible](https://img.shields.io/badge/Open%20Science-Reproducible-green.svg)](#)
+Repositorio reproducible asociado a:
 
-[ 🇪🇸 Español ](README.md) · [ 🇬🇧 English version ](README.en.md)
+> Montecinos García, R. S., & Vega Toledo, E. (2025). *Validación empírica
+> del FIGEM en municipios chilenos: tipologías fiscales y evaluación
+> cuantitativa*. Revista Políticas Públicas, 18(2), 3–21.
 
-Repositorio de **código abierto e investigación reproducible** correspondiente al estudio econométrico y multivariado sobre el **Fondo de Incentivo a la Gestión Municipal (FIGEM)** en Chile.
+El artículo evalúa si los grupos normativos del Fondo de Incentivo al
+Mejoramiento de la Gestión Municipal (FIGEM) agrupan municipios fiscalmente
+comparables. El análisis utiliza datos SINIM y registros FIGEM para 345
+municipios durante 2016–2024.
 
-> 📄 **Referencia bibliográfica:**  
-> Montecinos García, R. S., & Vega Toledo, E. (2025). *“Validación empírica del FIGEM en municipios chilenos: tipologías fiscales, clustering y evaluación de desempeño”*. Revista Políticas Públicas, 18(2), 3-21.
+## Qué reproduce
 
----
+El pipeline completo reproduce:
 
-## 🎯 Resumen de la Investigación
+1. imputación documentada de montos FIGEM faltantes;
+2. construcción de variables per cápita;
+3. PCA de desarrollo fiscal relativo;
+4. evaluación de K-Means para `k=2..6` y solución final `k=4`;
+5. tipologías fiscales con etiquetas semánticas estables;
+6. matriz FIGEM-clusters y Kappa de Cohen como indicador complementario;
+7. modelo de panel con efectos fijos municipales y anuales, con errores HC3;
+8. pruebas de robustez con diez semillas;
+9. las tablas y figuras de respaldo del artículo.
 
-El FIGEM es uno de los principales instrumentos de transferencia condicionada del Estado central hacia los gobiernos locales en Chile. Esta investigación evalúa empíricamente la efectividad, equidad distributiva y coherencia del fondo mediante:
+La solución `k=4` se conserva por equilibrio entre desempeño estadístico,
+interpretabilidad y utilidad evaluativa. `k=3` obtiene la mayor silhouette,
+por lo que la selección de `k=4` es una decisión sustantiva explícita y no
+una maximización automática de esa métrica.
 
-1. **Reducción de dimensionalidad y análisis de componentes principales (PCA):** Identificación de los ejes estructurales de vulnerabilidad fiscal y capacidad de gestión local.
-2. **Tipologías de conglomerados (Clustering):** Algoritmos K-Means, Ward Jerárquico y PAM (*Partitioning Around Medoids*) para caracterizar patrones municipales homogéneos.
-3. **Modelos econométricos con efectos fijos:** Evaluación del impacto del incentivo sobre la recaudación de ingresos propios y la eficiencia del gasto municipal.
-
----
-
-## 📁 Estructura del Repositorio
+## Estructura
 
 ```text
-├── data/
-│   └── Tesis_final_base_municipal.csv    # Panel de datos consolidado a nivel comunal
-├── src/
-│   ├── tesis_clustering_final.py         # Pipeline de PCA, métodos de codo, silueta y clustering
-│   └── generador_graficos_USACH.py       # Generación de gráficos y biplots de alta resolución
-├── figuras/
-│   ├── fig_pca_biplot.png                # Biplot de componentes principales
-│   ├── fig_elbow_silhouette.png          # Validación de número óptimo de clusters
-│   ├── fig_clusters_distribucion.png     # Distribución comunal de tipologías
-│   ├── fig_boxplots_autonomia.png        # Autonomía fiscal por tipología
-│   ├── fig_coeficientes_fe.png           # Coeficientes de modelos de efectos fijos
-│   └── fig_confusion_heatmap.png         # Matriz de concordancia entre metodologías
-├── requirements.txt                      # Dependencias de Python reproducibles
-├── LICENSE                               # Licencia MIT
-└── README.md
+data/
+  Input_USACH.xlsx       # insumo consolidado SINIM + FIGEM
+  Output_USACH.xlsx      # salida reproducida, 17 hojas trazables
+src/
+  Clustering_USACH.py    # pipeline completo
+  generador_graficos_USACH.py
+figuras/                 # seis figuras reproducibles
+docs/
+  Cuaderno_Metodologico_FIGEM.docx
+requirements.txt
 ```
 
----
-
-## 🛠️ Stack Tecnológico & Métodos
-
-- **Lenguaje:** Python 3.10+
-- **Bibliotecas:** `pandas`, `numpy`, `scikit-learn`, `scipy`, `matplotlib`, `seaborn`, `statsmodels`
-- **Métodos Estadísticos:** PCA, K-Means, Clustering Jerárquico (Ward), PAM, Regresión de Panel con Efectos Fijos.
-
----
-
-## 🚀 Reproducción de Resultados
+## Reproducción
 
 ```bash
-# 1. Clonar el repositorio
-git clone https://github.com/evegat/figem-analisis-fiscal-municipal.git
-cd figem-analisis-fiscal-municipal
-
-# 2. Configurar entorno virtual
 python -m venv .venv
-source .venv/bin/activate  # En Windows: .venv\Scripts\activate
-
-# 3. Instalar requerimientos
+# Windows:
+.venv\Scripts\activate
+# macOS/Linux:
+# source .venv/bin/activate
 pip install -r requirements.txt
-
-# 4. Ejecutar análisis y reproducir figuras
-python src/tesis_clustering_final.py
+python src/Clustering_USACH.py
 python src/generador_graficos_USACH.py
 ```
 
----
+El pipeline usa rutas relativas a la raíz del repositorio y sobrescribe
+`data/Output_USACH.xlsx` con una salida nueva. La ejecución esperada reporta:
 
-## 📚 Cita Bibliográfica (BibTeX)
-
-```bibtex
-@article{montecinos_vega_2025_figem,
-  author    = {Montecinos Garc{\'i}a, Randy Soledad and Vega Toledo, Eduardo Isaack},
-  title     = {Validaci{\'o}n emp{\'i}rica del FIGEM en municipios chilenos: tipolog{\'i}as fiscales, clustering y evaluaci{\'o}n de desempe{\~n}o},
-  journal   = {Revista Pol{\'i}ticas P{\'u}blicas},
-  year      = {2025},
-  volume    = {18},
-  number    = {2},
-  pages     = {3--21}
-}
+```text
+345 municipios
+PCA1: 81.0%
+Silhouette k=4: 0.2376
+Kappa: -0.0095
+Discrepancia modal: 48.7%
+R² within: 0.1495
 ```
 
----
+La discrepancia de 48,7% corresponde a la discrepancia bajo asignación modal
+por grupo FIGEM: se suma el máximo de cada fila de la matriz de confusión y se
+resta de 100%. No representa una equivalencia uno-a-uno entre cinco grupos
+normativos y cuatro clusters.
 
-## 👥 Autores
+## Datos, alcance y limitaciones
 
-* **Soledad Montecinos García** — Universidad de Santiago de Chile (USACH).
-* **Eduardo Vega Toledo** — *Administrador Público · Magíster en Gobierno y Gerencia Pública (U. de Chile)* · Ex Jefe de Departamento de Inversión Municipal (SUBDERE) · Docente en FAGOB Universidad de Chile.
+Los datos son administrativos y públicos, integrados desde SINIM y registros
+FIGEM. El estudio es evaluativo y no causal. El modelo de efectos fijos
+identifica asociaciones intra-municipales, no efectos causales. La imputación
+de montos FIGEM está documentada en la hoja `01_Imputacion_FIGEM` y no
+reemplaza observaciones originales.
+
+La propuesta de rediseño híbrido del artículo es una hipótesis de política
+pública, no una regla implementable sin simulación distributiva, análisis de
+ganadores y perdedores y transición gradual.
+
+## Licencia y cita
+
+El código se distribuye bajo MIT. Para citar el análisis, use la referencia
+del artículo indicada al inicio de este README.
