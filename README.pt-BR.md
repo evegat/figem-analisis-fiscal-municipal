@@ -78,10 +78,10 @@ A proposta de redesenho híbrido apresentada no artigo é uma hipótese de
 política pública. Qualquer implementação exigiria simulação distributiva,
 análise de ganhadores e perdedores e uma transição gradual.
 
-O código é distribuído sob a licença MIT. A procedência dos dados e as
-condições de redistribuição estão documentadas em
-`docs/DATA-AND-LICENSE.md` e devem ser confirmadas antes da publicação do
-repositório.
+O código é distribuído sob a licença MIT. Os dados de origem são informações
+públicas do SINIM/FIGEM, baixadas manualmente e consolidadas pelos autores. A
+procedência e a atribuição estão documentadas em
+`docs/DATA-AND-LICENSE.md`.
 
 ## Estrutura
 

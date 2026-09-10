@@ -91,10 +91,10 @@ La propuesta de rediseño híbrido del artículo es una hipótesis de política
 pública, no una regla implementable sin simulación distributiva, análisis de
 ganadores y perdedores y transición gradual.
 
-La licencia del código es MIT. La procedencia y las condiciones de
-redistribución de los datos están documentadas en
-`docs/DATA-AND-LICENSE.md` y deben confirmarse antes de hacer pública la
-repo.
+La licencia del código es MIT. Los datos base provienen de información pública
+SINIM/FIGEM descargada manualmente y consolidada por los autores. La
+procedencia y atribución están documentadas en
+`docs/DATA-AND-LICENSE.md`.
 
 ## Licencia y cita
 

@@ -47,6 +47,6 @@ associations. The reported 48.7% discrepancy is the complement of modal
 row-wise agreement in the five-by-four FIGEM/cluster table; it is not a strict
 one-to-one classification accuracy measure.
 
-Code is released under MIT. Data provenance and redistribution conditions are
-documented in `docs/DATA-AND-LICENSE.md` and must be confirmed before public
-release.
+Code is released under MIT. The source records are public SINIM/FIGEM
+information downloaded manually and consolidated by the authors. Provenance
+and attribution are documented in `docs/DATA-AND-LICENSE.md`.
